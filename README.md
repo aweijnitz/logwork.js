@@ -5,6 +5,13 @@ Sometimes it can be difficult to track time to dedicated Jira tickets when worki
 all relating to a single feature. This is where LogWork comes in handy. It lets you simply specify a 
 number of hours to distribute and a list of tickets to distribute them on. LogWork will take care of the rest.
 
+
+## Installation
+
+1. Install [jira-cmd](https://github.com/germanrcuriel/jira-cmd#readme) and set it up (user/password, etc). ```npm install -g jira-cmd```
+2. ```npm install -g logwork```
+
+
 ## How to use
 
 __Log 6 hours randomly to the three given tickets, adding comments from the given file__
@@ -34,12 +41,6 @@ $ logwork -c ./example/comments.txt 6 TICKET-A TICKET-B TICKET-C
 ```
 
 
-## Installation
-
-1. Install [jira-cmd](https://github.com/germanrcuriel/jira-cmd#readme) and set it up (user/password, etc). ```npm install -g jira-cmd```
-2. ```npm install -g logwork```
-
-
 ## How it works
 The supplied number of hours will be randomly distributed over the list of tickets given. For each ticket with 
 more than zero hours to it, jira-cmd will be invoked with the _worklogadd_ command.
@@ -51,3 +52,8 @@ or
 $ jira worklogadd TICKET-B 1 "Refactoring and implementation"
 ```
 
+## Releasing a new version
+
+1. Make sure working directory is clean and everyting is checked in.
+2. Update the version ```npm version minor -m "Comment here"```. [More details](https://docs.npmjs.com/cli/version).
+3. Publish the new version ```npm publish```. [More details](https://docs.npmjs.com/getting-started/publishing-npm-packages)
