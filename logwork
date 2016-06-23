@@ -1,0 +1,33 @@
+#!/usr/bin/env node
+
+var program = require('commander');
+var logwork = require('./lib/logwork');
+
+if (!process.argv.slice(2).length) {
+    program.help();
+}
+
+program
+    .arguments('<hours> <jira_ticket> [more_tickets...]')
+    .description('Distribute a given amount of hours randomly over the given tickets as logwork in Jira. '
+            + 'Example: logwork -d -c ./example/comments.txt 6 TICKET-A TICKET-B TICKET-C '
+        +'. Requires jira-cmd, https://github.com/germanrcuriel/jira-cmd#readme. ')
+    .option('-d, --dryrun', 'Dry run. Do nothing. Just print the commands.')
+    .option('-c, --commentsFile <file>', 'Path to file with strings to use as generic comments to the logwork. Default is no comments. The file must have only one comment per line.')
+    .action(function (hours, jira_ticket, more_tickets) {
+        var tickets = [];
+
+        if (!!jira_ticket)
+            tickets.push(jira_ticket);
+        else
+            return;
+
+        if (!!more_tickets) {
+            more_tickets.forEach(function (ticket) {
+                tickets.push(ticket);
+            });
+        }
+
+        logwork(tickets, hours, (program.commentsFile || false), (program.dryrun || false) );
+    })
+    .parse(process.argv);
