@@ -24,6 +24,7 @@ $ logwork --help
 ```
 
 __(Optional) Including your own worklog comments__
+
 1. Create a file with comments to pick from. See [example](./example/comments.txt). Comments must be separated by line breaks.
 2. Use the ```-c``` option and point to the file. LogWork will pick randomly form the comments and include them in the worklog.
 
