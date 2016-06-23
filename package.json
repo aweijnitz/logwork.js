@@ -2,7 +2,7 @@
   "name": "logwork",
   "version": "1.0.0",
   "description": "Command line utility to manage Jira worklogs for you.",
-  "main": "index.js",
+  "main": "logwork",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "postversion": "git push origin master && git push --tags origin master"
