@@ -1,4 +1,4 @@
-# LogWork - A command line utility for easy jira worklogging
+# LogWork - A command line utility for easy jira work logging
 
 ## Motivation
 Sometimes it can be difficult to track time to dedicated Jira tickets when working on multiple issues, 
