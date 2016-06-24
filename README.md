@@ -17,11 +17,11 @@ number of hours to distribute and a list of tickets to distribute them on. LogWo
 __Log 6 hours randomly to the three given tickets, adding comments from the given file__
 ```bash
 # Note! A ticket might get zero hours on a given day. If so, it will be ignored and not logged to jira.
-$ logwork -d -c ./example/comments.txt 6 TICKET-A TICKET-B TICKET-C  
+$ logwork -c ./example/comments.txt 6 TICKET-A TICKET-B TICKET-C  
 ```
 __Dry Run Mode! Same thing as above, but just list the commands, do nothing__
 ```bash
-$ logwork -c ./example/comments.txt 6 TICKET-A TICKET-B TICKET-C
+$ logwork -d -c ./example/comments.txt 6 TICKET-A TICKET-B TICKET-C
 ```
 
 __Diplay usage info__
